@@ -1,0 +1,60 @@
+<!-- <div class="all">
+
+    <div class="fila" routerLink="/calculo_cuota">
+        <div class="icono">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="price_check"></mat-icon>
+        </div>
+        <div class="titulo"><p>Calculo de cuota</p></div>
+    </div>
+    <div class="fila" routerLink="fondo_mi_vivienda">
+        <div class="icono">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+        </div>
+        <div class="titulo">Fondo mi vivienda</div>
+    </div>
+    <div class="fila" routerLink="calculo_intereses">
+        <div class="icono">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="stacked_line_chart"></mat-icon>
+        </div>
+        <div class="titulo">Calculo de intereses</div>
+    </div>
+    <div class="fila" routerLink="beneficio_amortizacion">
+        <div class="icono">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="data_saver_on"></mat-icon>
+        </div>
+        <div class="titulo">Calculo de benificios de amortización</div>
+    </div>
+</div> -->
+
+<div class="all">
+    <div class="fila" routerLink="/calculo_cuota" [ngClass]="{ 'active-button': activeButton === 'calculo_cuota' }" (click)="setActiveButton()">
+      <div class="icono">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="price_check"></mat-icon>
+      </div>
+      <div class="titulo">
+        <p>Calculo de cuota</p>
+      </div>
+    </div>
+
+    <div class="fila" routerLink="/fondo_mi_vivienda" [ngClass]="{ 'active-button': activeButton === 'fondo_mi_vivienda' }" (click)="setActiveButton()">
+      <div class="icono">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+      </div>
+      <div class="titulo">Fondo mi vivienda</div>
+    </div>
+
+    <div class="fila" routerLink="/calculo_intereses" [ngClass]="{ 'active-button': activeButton === 'calculo_intereses' }" (click)="setActiveButton()">
+      <div class="icono">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="stacked_line_chart"></mat-icon>
+      </div>
+      <div class="titulo">Calculo de intereses</div>
+    </div>
+    
+    <div class="fila" routerLink="/beneficio_amortizacion" [ngClass]="{ 'active-button': activeButton === 'beneficio_amortizacion' }" (click)="setActiveButton()">
+      <div class="icono">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="data_saver_on"></mat-icon>
+      </div>
+      <div class="titulo">Calculo de beneficios de amortización</div>
+    </div>
+  </div>
+  

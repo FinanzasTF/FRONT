@@ -1,0 +1,124 @@
+<br>
+<br>
+<br>
+
+<div class="all">
+  <div class="card_">
+    <div class="titulo">
+      <h1>Calculo de cuota</h1>
+    </div>
+
+    <form [formGroup]="datos" (ngSubmit)="saveData()">
+      <div class="subtitulo">
+
+
+
+        <div class="colum">
+          
+          <div class="example-form ancho">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tasa efectiva(%)</mat-label>
+              <input matInput placeholder="Ex. Pizza" formControlName="tasaEfectivaAnual">
+            </mat-form-field>
+          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo de tasa efectiva</mat-label>
+            <mat-select disableRipple formControlName="tipoTasa">
+              <mat-option value="Mensual">Mensual</mat-option>
+              <mat-option value="Bimestral">Bimestral</mat-option>
+              <mat-option value="Trimestral">Trimestral</mat-option>
+              <mat-option value="Cuatrimestral">Cuatrimestral</mat-option>
+              <mat-option value="Semestral">Semestral</mat-option>
+              <mat-option value="Anual">Anual</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Frecuencia de pago</mat-label>
+            <mat-select disableRipple formControlName="frecuenciaPago">
+              <mat-option value="Quincenal">Quincenal</mat-option>
+              <mat-option value="Mensual">Mensual</mat-option>
+              <mat-option value="Bimestral">Bimestral</mat-option>
+              <mat-option value="Trimestral">Trimestral</mat-option>
+              <mat-option value="Cuatrimestral">Cuatrimestral</mat-option>
+              <mat-option value="Semestral">Semestral</mat-option>
+              <mat-option value="Anual">Anual</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Fecha de prestamo</mat-label>
+              <input matInput type="date" placeholder="Ex. Pizza" value="" formControlName="fechaPrestamo">
+            </mat-form-field>
+          </div>
+
+          
+
+          
+
+
+        </div>
+
+        <div class="colum">
+          <!-- <mat-form-field class="example-full-width">
+            <mat-label>Tipo de periodo de gracia</mat-label>
+            <mat-select disableRipple formControlName="tipoPeriodoGracia">
+              <mat-option value="1">Parcial</mat-option>
+              <mat-option value="2">Total</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tiempo del periodo de gracia</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="" formControlName="tiempoPeriodoGracia">
+            </mat-form-field>
+          </div> -->
+
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Duracion del prestamo</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="" formControlName="duracionPrestamo">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Unidad de tiempo</mat-label>
+            <mat-select disableRipple formControlName="unidadTiempo">
+              <mat-option value="Meses">Meses</mat-option>
+              <mat-option value="Años">Años</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Monto del prestamo</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="" formControlName="montoPrestamo">
+            </mat-form-field>
+          </div>
+
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Monto de Bono Fondo mi vivienda</mat-label>
+              <input matInput placeholder="Ex. Pizza" value="" formControlName="MontoBonoFondoMiVivienda">
+            </mat-form-field>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="botones">
+        <button mat-raised-button color="primary" (click)="calendario=true" [disabled]="this.datos.invalid">Calcular</button>
+        <button mat-raised-button color="warn">Eliminar datos</button>
+      </div>
+    </form>
+
+    <div *ngIf="calendario">
+      <app-calendar [arregloDatos]="anualidad" ></app-calendar>
+    </div>
+
+  </div>
+
+
+</div>

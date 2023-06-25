@@ -1,0 +1,45 @@
+.all{
+ 
+}
+
+.card_ {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  /* box-shadow: 0px 10px 10px -6px black; */
+  box-shadow: 0px 0px 20px -0px rgba(39, 39, 39, 0.562);
+  /* box-shadow: 0px 10px 10px black; */
+  border: 3px solid #6AC7DC;
+  border-radius: 15px;
+}
+
+.titulo {
+  /* background-color: red; */
+  border-bottom: 3px solid #6AC7DC;
+  text-align: center;
+}
+
+.example-full-width {
+  width: 90%;
+}
+
+.subtitulo {
+  margin-top: 2rem;
+  height: 30rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.botones{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.botones button{
+  width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,62 @@
+<div class="barr">
+    <div class="item">
+        <div class="cuenta">
+            <!-- <div class="icono">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+            </div> -->
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <!-- <div class="icono">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+            </div> -->
+            <mat-icon style="color: white; font-size: 2rem; height: auto;width: auto;" aria-hidden="false" aria-label="Example home icon" fontIcon="menu"></mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <div class="fila" routerLink="/calculo_cuota">
+                            <div class="icono">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                    fontIcon="price_check"></mat-icon>
+                            </div>
+                            <div class="titulo">
+                                <p>Calculo de cuota</p>
+                            </div>
+                        </div>
+                    </button>
+                    <button mat-menu-item>
+                        <div class="fila" routerLink="/fondo_mi_vivienda">
+                            <div class="icono">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+                            </div>
+                            <div class="titulo">Periodo de gracia</div>
+                        </div>
+                    </button>
+                    <button mat-menu-item>
+                        <div class="fila" routerLink="/calculo_intereses">
+                            <div class="icono">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                    fontIcon="stacked_line_chart"></mat-icon>
+                            </div>
+                            <div class="titulo">Calculo de intereses</div>
+                        </div>
+                    </button>
+                    <button mat-menu-item>
+                        <div class="fila" routerLink="/beneficio_amortizacion">
+                            <div class="icono">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                    fontIcon="data_saver_on"></mat-icon>
+                            </div>
+                            <div class="titulo">Calculo de beneficios de amortización</div>
+                        </div>
+                    </button>
+                </mat-menu>
+
+            </div>
+            <p>Mi cuenta</p>
+        </div>
+    </div>
+    <div class="item">Calculo de cuotas</div>
+    <div class="margin-l">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon>
+    </div>
+</div>

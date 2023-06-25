@@ -1,0 +1,114 @@
+<br>
+<br>
+<br>
+
+<div class="all">
+
+    <div class="card_">
+        <div class="titulo">
+            <h1>Fondo mi vivienda</h1>
+        </div>
+        <div class="subtitulo">
+
+            <div class="colum">
+              <form class="example-form ancho">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tasa efectiva anual</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Frecuencia de pago</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Option 1</mat-option>
+                  <mat-option value="2">Option 2</mat-option>
+                  <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+              
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Fecha de prestamo</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Unidad de tiempo</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Option 1</mat-option>
+                  <mat-option value="2">Option 2</mat-option>
+                  <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Monto del bono Fondo Mi Vivienda</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+            </div>
+
+            <div class="colum">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo de periodo de gracia</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Option 1</mat-option>
+                  <mat-option value="2">Option 2</mat-option>
+                  <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tiempo del periodo de gracia</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Duracion del prestamo</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+
+              <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Monto del prestamo</mat-label>
+                  <input matInput placeholder="Ex. Pizza" value="">
+                </mat-form-field>
+              </form>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>Moneda</mat-label>
+                <mat-select disableRipple>
+                  <mat-option value="1">Option 1</mat-option>
+                  <mat-option value="2">Option 2</mat-option>
+                  <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            
+        </div>
+       
+        <div class="botones">
+          <button mat-raised-button color="primary" (click)="calendario=true">Calcular</button>
+          <button mat-raised-button color="warn">Eliminar datos</button>
+        </div>
+        
+
+        <div *ngIf="calendario">
+          <app-calendar></app-calendar>
+        </div>
+
+
+    </div>
+
+    
+    
+</div>
+
+
