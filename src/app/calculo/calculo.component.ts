@@ -87,7 +87,7 @@ export class CalculoComponent {
   mostrar(aaa: any) {
 
   }
-
+ 
   saveData() {
     this.prestamo = new Prestamo(
       this.datos.value.tasaEfectivaAnual,this.datos.value.frecuenciaPago,
@@ -105,10 +105,8 @@ export class CalculoComponent {
 
     )
 
-    this.prestamo.duracionPrestamoToFrecuenciaPago()
-    this.prestamo.duracionPeriodoGraciaToFrecuenciaPago()
+    
     this.TiempoPeriodoGraciaSend = this.prestamo.TiempoPeriodoGracia
-    this.prestamo.mostrar()
     this.prestamo.calcular()
     this.resultado = this.prestamo.anualidad
     this.interesPeriodoGraciaParcialSend = this.prestamo.interesPeriodoGraciaParcial

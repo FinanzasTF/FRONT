@@ -65,15 +65,27 @@ export class Prestamo {
 
     //hace el calculo de la cuota
     calcular() {
+        this.duracionPrestamoToFrecuenciaPago()
+    this.duracionPeriodoGraciaToFrecuenciaPago()
+    this.mostrar()
         this.tasaToFrecuenciaPago()
+        console.log("tasa calculo: " +this.tasaCalculo)
         this.tasaDesgravamenToFrecuenciaPago()
 
-        // console.log("tasa seguro: "+this.tasaDesgravamenCalculo)
-        let aumentoDesgravamen = parseFloat(this.montoPrestamo) * this.tasaDesgravamenCalculo
         if (this.MontoBonoFondoMiVivienda !== '') {
             let a = parseInt(this.montoPrestamo) - parseInt(this.MontoBonoFondoMiVivienda)
             this.montoPrestamo = a.toString()
         }
+        let aumentoDesgravamen!: number
+        if(this.seguroDesgramen!==''){
+            aumentoDesgravamen = parseFloat(this.montoPrestamo) * this.tasaDesgravamenCalculo
+        }
+        else{
+            aumentoDesgravamen =0
+        }
+
+        
+        
         this.duracionPrestamo = (parseInt(this.duracionPrestamo) - parseInt(this.TiempoPeriodoGracia)).toString()
         if (this.MontoBonoFondoMiVivienda === '') {
             this.anualidad = aumentoDesgravamen + parseFloat((((parseInt(this.montoPrestamo)) * (this.tasaCalculo)) /
@@ -82,7 +94,7 @@ export class Prestamo {
             this.anualidad=parseFloat(this.anualidad.toFixed(2))
         }
         else {
-            this.montoPrestamo = (parseInt(this.montoPrestamo) - parseInt(this.MontoBonoFondoMiVivienda)).toString()
+            this.montoPrestamo = (parseInt(this.montoPrestamo) ).toString()
             this.anualidad = aumentoDesgravamen + parseFloat((((parseInt(this.montoPrestamo)) * (this.tasaCalculo)) /
                 (1 - (1 + (this.tasaCalculo)) ** (parseFloat(this.duracionPrestamo) * -1))).toFixed(10))
             this.interesPeriodoGracia()
@@ -215,7 +227,9 @@ export class Prestamo {
             case "Anual":
                 tasaTemp = 1;
                 switch (this.frecuenciaPago) {
-                    case "Mensual": this.tasaCalculo = this.convertirTasa(this.tasaCalculo, tasaTemp, 12); break;
+                    case "Mensual": 
+                    console.log("aaaaa")
+                    this.tasaCalculo = this.convertirTasa(this.tasaCalculo, tasaTemp, 12); break;
                     case "Bimestral": this.tasaCalculo = this.convertirTasa(this.tasaCalculo, tasaTemp, 6); break;
                     case "Trimestral": this.tasaCalculo = this.convertirTasa(this.tasaCalculo, tasaTemp, 4); break;
                     case "Cuatrimestral": this.tasaCalculo = this.convertirTasa(this.tasaCalculo, tasaTemp, 3); break;

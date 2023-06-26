@@ -17,12 +17,12 @@
           
           <div class="example-form ancho">
             <mat-form-field class="example-full-width">
-              <mat-label>Tasa efectiva(%)</mat-label>
+              <mat-label>Tasa efectiva(%) **</mat-label>
               <input matInput placeholder="Example: 27%" formControlName="tasaEfectivaAnual">
             </mat-form-field>
           </div>
           <mat-form-field class="example-full-width">
-            <mat-label>Tipo de tasa efectiva</mat-label>
+            <mat-label>Tipo de tasa efectiva **</mat-label>
             <mat-select disableRipple formControlName="tipoTasa">
               <mat-option value="Mensual">Mensual</mat-option>
               <mat-option value="Bimestral">Bimestral</mat-option>
@@ -40,7 +40,7 @@
           </div>
           <mat-form-field class="example-full-width">
             <mat-label>Tipo de tasa de seguro desgravamen</mat-label>
-            <mat-select disableRipple formControlName="tipoTasa">
+            <mat-select disableRipple formControlName="tipoTasaDesgravamen">
               <mat-option value="Mensual">Mensual</mat-option>
               <mat-option value="Bimestral">Bimestral</mat-option>
               <mat-option value="Trimestral">Trimestral</mat-option>
@@ -50,7 +50,7 @@
             </mat-select>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <mat-label>Frecuencia de pago</mat-label>
+            <mat-label>Frecuencia de pago **</mat-label>
             <mat-select disableRipple formControlName="frecuenciaPago">
               <!-- <mat-option value="Quincenal">Quincenal</mat-option> -->
               <mat-option value="Mensual">Mensual</mat-option>
@@ -64,7 +64,7 @@
 
           <div class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Fecha de prestamo</mat-label>
+              <mat-label>Fecha de prestamo **</mat-label>
               <input matInput type="date" placeholder="dia/mes/año" value="" formControlName="fechaPrestamo">
             </mat-form-field>
           </div>
@@ -94,13 +94,13 @@
 
           <div class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Duracion del prestamo</mat-label>
+              <mat-label>Duracion del prestamo **</mat-label>
               <input matInput placeholder="Mayor o igual a 5 años" value="" formControlName="duracionPrestamo">
             </mat-form-field>
           </div>
 
           <mat-form-field class="example-full-width">
-            <mat-label>Unidad de tiempo</mat-label>
+            <mat-label>Unidad de tiempo **</mat-label>
             <mat-select disableRipple formControlName="unidadTiempo">
               <mat-option value="Meses">Meses</mat-option>
               <mat-option value="Años">Años</mat-option>
@@ -109,7 +109,7 @@
 
           <div class="example-form">
             <mat-form-field class="example-full-width">
-              <mat-label>Monto del prestamo</mat-label>
+              <mat-label>Monto del prestamo **</mat-label>
               <input matInput placeholder="Mayor a 50 000 S/." value="" formControlName="montoPrestamo">
             </mat-form-field>
           </div>
