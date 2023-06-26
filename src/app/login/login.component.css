@@ -1,0 +1,38 @@
+
+.login-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .image-container {
+    flex: 1;
+    background-image: url('../../assets/images/loguito.png');
+    background-size: cover;
+  }
+  
+  .form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6AC7DC;
+    color: #000000;
+  }
+  
+  .custom-button {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .titulo{
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .botones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }

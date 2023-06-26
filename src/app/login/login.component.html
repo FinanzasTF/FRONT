@@ -1,0 +1,51 @@
+
+  <div class="codigoLogin">
+    <div class="login-container">
+      <div class="image-container"></div>
+      <div class="form-container" >
+        <div>
+          <!-- <h1>Inicia sesión</h1> -->
+          <p class="titulo">Inicia sesión</p>
+        </div>
+        <div>
+          <!-- <div>
+            <p>ID:</p>
+          </div> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Ingrese su Email</mat-label>
+            <input matInput type="text" [(ngModel)]="name" placeholder="Email">
+          </mat-form-field>
+        </div>
+        <div>
+          <!-- <div>
+            <p>Password:</p>
+          </div> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Ingrese su contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="password" placeholder="Contraseña">
+          </mat-form-field>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+          <a href="#" (click)="forgotPassword()">¿Olvidaste tu contraseña?</a>
+        </div>
+        <!-- <div>
+          <a href="#" routerLink="/registrar">Regístrate</a>
+        </div> -->
+        <div class="botones">
+          
+          <div>
+            <button mat-raised-button color="primary" class="custom-button" (click)="login()">Iniciar sesión</button>
+          </div>
+
+          <div>
+            <button mat-raised-button color="primary" class="custom-button" routerLink="/registrar" style="background-color: white; color: black; margin-left: 2rem;">Regístrate</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  

@@ -8,6 +8,9 @@ import { Anualidad } from 'src/assets/models/Anualidad';
 })
 export class CalendarComponent{
   @Input() arregloDatos!: Anualidad;
+  @Input() periodoTotal!: number;
+  @Input() TipoPeriodoGraciaSend!: string;
+  @Input() interesPeriodoGraciaParcialSend!: number;
   
   constructor() {
     

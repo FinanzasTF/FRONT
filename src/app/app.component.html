@@ -1,33 +1,9 @@
-<div class="todo">
-    <div class="heading fix1">
-        <app-heading class=""></app-heading>
-    </div>
-    <!-- <div class="divisor">
-        <div >
-            <app-menu class="fix"></app-menu>
-        </div>
-        <div>
-            <router-outlet></router-outlet>
-        </div>
-    </div> -->
-    <div style="padding-bottom: 4rem;">
-      <router-outlet></router-outlet>
-    </div>
-</div>
+<!-- 
+<app-heading *ngIf="router.url!=='/login'"></app-heading>
+<router-outlet></router-outlet>
+ -->
 
 
+ <app-heading *ngIf="router.url!=='/login' && router.url!=='/registrar'&& router.url!=='/'"></app-heading>
+<router-outlet></router-outlet>
 
- <!-- <div class="todo">
-    <div class="heading">
-      <app-heading></app-heading>
-    </div>
-    <div class="divisor">
-      <div>
-        <app-menu></app-menu>
-      </div>
-      <div class="router-container">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-   -->

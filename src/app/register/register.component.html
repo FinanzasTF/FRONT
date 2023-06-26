@@ -1,0 +1,31 @@
+<div class="codigoLogin">
+  
+    <div class="register-container" style="background-color: #6AC7DC;">
+      <div class="register-card" >
+        <p class="titulo">Registro</p>
+        <div class="register-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput type="text" [(ngModel)]="user.name" placeholder="Ingrese su nombre">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="user.email" placeholder="Ingrese su email">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="user.password" placeholder="Ingrese su contraseña">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Número de teléfono</mat-label>
+            <input matInput type="text" [(ngModel)]="user.phoneNumber" placeholder="Ingrese su número de teléfono">
+          </mat-form-field>
+          <div class="register-button">
+            <button mat-raised-button  (click)="register()" style="background-color: rgb(94, 91, 91); color: white; font-size: 1.2rem;">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="imagen"></div>
+  </div>
+  

@@ -18,7 +18,7 @@
           <div class="example-form ancho">
             <mat-form-field class="example-full-width">
               <mat-label>Tasa efectiva(%)</mat-label>
-              <input matInput placeholder="Ex. Pizza" formControlName="tasaEfectivaAnual">
+              <input matInput placeholder="Example: 27%" formControlName="tasaEfectivaAnual">
             </mat-form-field>
           </div>
           <mat-form-field class="example-full-width">
@@ -32,10 +32,27 @@
               <mat-option value="Anual">Anual</mat-option>
             </mat-select>
           </mat-form-field>
+          <div class="example-form ancho">
+            <mat-form-field class="example-full-width">
+              <mat-label>Seguro Desgravamen(%)</mat-label>
+              <input matInput placeholder="Entre 0% y 2%" formControlName="seguroDesgramen">
+            </mat-form-field>
+          </div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo de tasa de seguro desgravamen</mat-label>
+            <mat-select disableRipple formControlName="tipoTasa">
+              <mat-option value="Mensual">Mensual</mat-option>
+              <mat-option value="Bimestral">Bimestral</mat-option>
+              <mat-option value="Trimestral">Trimestral</mat-option>
+              <mat-option value="Cuatrimestral">Cuatrimestral</mat-option>
+              <mat-option value="Semestral">Semestral</mat-option>
+              <mat-option value="Anual">Anual</mat-option>
+            </mat-select>
+          </mat-form-field>
           <mat-form-field class="example-full-width">
             <mat-label>Frecuencia de pago</mat-label>
             <mat-select disableRipple formControlName="frecuenciaPago">
-              <mat-option value="Quincenal">Quincenal</mat-option>
+              <!-- <mat-option value="Quincenal">Quincenal</mat-option> -->
               <mat-option value="Mensual">Mensual</mat-option>
               <mat-option value="Bimestral">Bimestral</mat-option>
               <mat-option value="Trimestral">Trimestral</mat-option>
@@ -48,7 +65,7 @@
           <div class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Fecha de prestamo</mat-label>
-              <input matInput type="date" placeholder="Ex. Pizza" value="" formControlName="fechaPrestamo">
+              <input matInput type="date" placeholder="dia/mes/año" value="" formControlName="fechaPrestamo">
             </mat-form-field>
           </div>
 
@@ -78,7 +95,7 @@
           <div class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Duracion del prestamo</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="" formControlName="duracionPrestamo">
+              <input matInput placeholder="Mayor o igual a 5 años" value="" formControlName="duracionPrestamo">
             </mat-form-field>
           </div>
 
@@ -93,16 +110,45 @@
           <div class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Monto del prestamo</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="" formControlName="montoPrestamo">
+              <input matInput placeholder="Mayor a 50 000 S/." value="" formControlName="montoPrestamo">
             </mat-form-field>
           </div>
 
           <div class="example-form">
             <mat-form-field class="example-full-width">
               <mat-label>Monto de Bono Fondo mi vivienda</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="" formControlName="MontoBonoFondoMiVivienda">
+              <input matInput placeholder="no mayor a 60 000 S/." value="" formControlName="MontoBonoFondoMiVivienda">
             </mat-form-field>
           </div>
+          <!-- periodo de gracia -->
+          <div class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Tiempo del periodo de gracia</mat-label>
+              <input matInput placeholder="No mayor a 2 años" value="" formControlName="TiempoPeriodoGracia">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Tipo del periodo de gracia</mat-label>
+            <mat-select disableRipple formControlName="TipoPeriodoGracia">
+              <!-- <mat-option value="Quincenal">Quincenal</mat-option> -->
+              <mat-option value="Parcial">Parcial</mat-option>
+              <mat-option value="Total">Total</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Unidad de periodo de gracia</mat-label>
+            <mat-select disableRipple formControlName="UnidadPeriodoGracia">
+              <!-- <mat-option value="Quincenal">Quincenal</mat-option> -->
+              <mat-option value="Mensual">Mensual</mat-option>
+              <mat-option value="Bimestral">Bimestral</mat-option>
+              <mat-option value="Trimestral">Trimestral</mat-option>
+              <mat-option value="Cuatrimestral">Cuatrimestral</mat-option>
+              <mat-option value="Semestral">Semestral</mat-option>
+              <mat-option value="Anual">Anual</mat-option>
+            </mat-select>
+          </mat-form-field>
           
         </div>
 
@@ -110,15 +156,22 @@
 
       <div class="botones">
         <button mat-raised-button color="primary" (click)="calendario=true" [disabled]="this.datos.invalid">Calcular</button>
-        <button mat-raised-button color="warn">Eliminar datos</button>
+        <button mat-raised-button color="warn" onclick="location.reload()">Eliminar datos</button>
       </div>
     </form>
 
     <div *ngIf="calendario">
-      <app-calendar [arregloDatos]="anualidad" ></app-calendar>
+      <app-calendar [arregloDatos]="anualidad"
+                    [periodoTotal]="TiempoPeriodoGraciaSend"
+                    [TipoPeriodoGraciaSend]="TipoPeriodoGraciaSend"
+                    [interesPeriodoGraciaParcialSend]="interesPeriodoGraciaParcialSend"></app-calendar>
+      <!--  -->
     </div>
 
   </div>
 
 
 </div>
+
+
+

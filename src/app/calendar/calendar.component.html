@@ -2,30 +2,71 @@
 <br>
 <br>
 <div class="all">
-    
+
     <div class="card_">
         <div class="columnas">
             <div class="cardObj">
-                    <div class="column1">N° Pago</div>
-                    <div class="column1">Monto</div>
-                    <div class="column1">Fecha de Emisión</div>
-                    <div class="column1">Fecha de Vencimiento</div>
-                    <div class="column1">Moneda</div>
-                    <div class="column1">Interes</div>
-            </div>      
+                <div class="column1">N° Pago</div>
+                <div class="column1">Monto</div>
+                <div class="column1">Fecha de Emisión</div>
+                <div class="column1">Fecha de Vencimiento</div>
+                <div class="column1">Moneda</div>
+                <div class="column1">Interes</div>
+                <div class="column1">Interes Especifico</div>
+            </div>
         </div>
-        <div class="columnas" *ngFor="let dato of arregloDatos.fechasEmision; let i = index">
-            <div class="cardObj2">
-                <div class="column2"><div class="caja"><p>{{i+1}}</p></div></div>
-                <div class="column2">S/. {{arregloDatos.monto}}</div>
-                <div class="column2">{{dato}}</div>
-                <div class="column2">{{arregloDatos.fechasVencimiento[i]}}</div>
-                <div class="column2">soles</div>
-                <div class="column2">{{arregloDatos.interes}} %</div>
-            </div> 
+
+<div *ngIf="TipoPeriodoGraciaSend === 'Parcial'" >
+    <div class="columnas" *ngFor="let dato of arregloDatos.fechasEmision; let i = index">
+        <div class="cardObj2">
+            <div class="column2">
+                <div class="caja">
+                    <p>{{i+1}}</p>
+                </div>
+            </div>
+            <div class="column2" *ngIf="periodoTotal < (i+1)"       >S/. {{ arregloDatos.monto }}</div>
+            <div class="column2" *ngIf="!(periodoTotal < (i+1))"    >S/. {{interesPeriodoGraciaParcialSend}}</div>
+
+            <div class="column2">{{dato}}</div>
+
+            <div class="column2">{{arregloDatos.fechasVencimiento[i]}}</div>
+            <!-- <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div>fechasVencimiento -->
+            <div class="column2">soles</div>
+            <!-- <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div> -->
+            <div class="column2">{{arregloDatos.interes}} %</div>
+            <!-- <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div> -->
+            <div class="column2">{{arregloDatos.tasaCalculo}} %</div>
+            <!-- <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div> -->
         </div>
-    
     </div>
 </div>
 
+<div *ngIf="TipoPeriodoGraciaSend !== 'Parcial'" >
+    <div class="columnas" *ngFor="let dato of arregloDatos.fechasEmision; let i = index">
+        <div class="cardObj2">
+            <div class="column2">
+                <div class="caja">
+                    <p>{{i+1}}</p>
+                </div>
+            </div>
+            <div class="column2" *ngIf="periodoTotal < (i+1)"       >S/. {{ arregloDatos.monto }}</div>
+            <div class="column2" *ngIf="!(periodoTotal < (i+1))"    >S/. 0.00</div>
 
+            <div class="column2">{{dato}}</div>
+
+            <div class="column2"*ngIf="periodoTotal < (i+1)"  >{{arregloDatos.fechasVencimiento[i]}}</div>
+            <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div>
+            <div class="column2"*ngIf="periodoTotal < (i+1)"  >soles</div>
+            <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div>
+            <div class="column2"*ngIf="periodoTotal < (i+1)">{{arregloDatos.interes}} %</div>
+            <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div>
+            <div class="column2"*ngIf="periodoTotal < (i+1)">{{arregloDatos.tasaCalculo}} %</div>
+            <div class="column2"*ngIf="!(periodoTotal < (i+1))">-</div>
+        </div>
+    </div>
+</div>
+
+        
+
+    </div>
+</div>

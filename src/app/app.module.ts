@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CalculoComponent } from './calculo/calculo.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HeadingComponent } from './heading/heading.component';
+import { HttpClientModule } from '@angular/common/http';
 
 //material
 import {MatInputModule} from '@angular/material/input';
@@ -20,9 +21,15 @@ import { InteresComponent } from './interes/interes.component';
 import { AmortizacionComponent } from './amortizacion/amortizacion.component';
 import {MatButtonModule} from '@angular/material/button';
 
+import { MatCardModule } from '@angular/material/card';
 
 
 import { MatMenuModule } from '@angular/material/menu';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +41,9 @@ import { MatMenuModule } from '@angular/material/menu';
     VivendaComponent,
     InteresComponent,
     AmortizacionComponent,
+    LoginComponent,
+    RegisterComponent,
+    PerfilComponent,
     
   ],
   imports: [
@@ -47,7 +57,10 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

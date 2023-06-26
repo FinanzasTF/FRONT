@@ -23,7 +23,7 @@
 
 .subtitulo {
   margin-top: 2rem;
-  height: 30rem;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
